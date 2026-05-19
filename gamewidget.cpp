@@ -22,6 +22,8 @@ GameWidget::GameWidget(QWidget *parent)
     blocks.push_back({400, 750, 300, 100});
     blocks.push_back({700, 700, 50, 50});
 
+    enemies.push_back({600, 600, 50, 50, 5});
+
 
     // Setting up FPS
     QTimer *timer = new QTimer(this);
@@ -56,6 +58,13 @@ void GameWidget::paintEvent(QPaintEvent *event)
     for (int i = 0; i < blocksSize; i++)
     {
         painter.drawRect(blocks.at(i).x - cameraX, blocks.at(i).y, blocks.at(i).width, blocks.at(i).height);
+    }
+
+    painter.setBrush(QColor(250,0,0));
+    int enemiesSize = enemies.size();
+    for (int i = 0; i < enemiesSize; i++)
+    {
+        enemies.at(i).draw(painter, cameraX);
     }
 
     player.draw(painter, cameraX);
@@ -102,6 +111,12 @@ void GameWidget::updateGame()
     player.setGrounded(false); // Always assume Kirby not grounded
 
     int oldKirbyX = player.getX(); // Use for walls etc for horizontal collision.
+
+    int enemiesSize = enemies.size();
+    for (int i = 0; i < enemiesSize; i++)
+    {
+        enemies.at(i).move(1);
+    }
 
     // Movement
     if (leftPressed) {

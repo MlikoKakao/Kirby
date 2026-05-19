@@ -5,6 +5,7 @@
 #include <QKeyEvent>
 #include <vector>
 #include "player.h"
+#include "enemy.h"
 
 struct Platform
 {
@@ -39,6 +40,7 @@ private:
     int gravity;
     std::vector<Platform> platforms;    
     std::vector<Block> blocks;
+    std::vector<Enemy> enemies;
     Player player;
 
     bool leftPressed;

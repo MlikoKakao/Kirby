@@ -52,12 +52,14 @@ OBJECTS_DIR   = ./
 
 ####### Files
 
-SOURCES       = ../../gamewidget.cpp \
+SOURCES       = ../../enemy.cpp \
+		../../gamewidget.cpp \
 		../../main.cpp \
 		../../mainwindow.cpp \
 		../../player.cpp moc_gamewidget.cpp \
 		moc_mainwindow.cpp
-OBJECTS       = gamewidget.o \
+OBJECTS       = enemy.o \
+		gamewidget.o \
 		main.o \
 		mainwindow.o \
 		player.o \
@@ -302,9 +304,11 @@ DIST          = /home/mk/Qt/6.11.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/mk/Qt/6.11.0/gcc_64/mkspecs/features/exceptions.prf \
 		/home/mk/Qt/6.11.0/gcc_64/mkspecs/features/yacc.prf \
 		/home/mk/Qt/6.11.0/gcc_64/mkspecs/features/lex.prf \
-		../../../../Kirby.pro ../../gamewidget.h \
+		../../../../Kirby.pro ../../enemy.h \
+		../../gamewidget.h \
 		../../mainwindow.h \
-		../../player.h ../../gamewidget.cpp \
+		../../player.h ../../enemy.cpp \
+		../../gamewidget.cpp \
 		../../main.cpp \
 		../../mainwindow.cpp \
 		../../player.cpp
@@ -821,8 +825,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents /home/mk/Qt/6.11.0/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../../gamewidget.h ../../mainwindow.h ../../player.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../../gamewidget.cpp ../../main.cpp ../../mainwindow.cpp ../../player.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../enemy.h ../../gamewidget.h ../../mainwindow.h ../../player.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../../enemy.cpp ../../gamewidget.cpp ../../main.cpp ../../mainwindow.cpp ../../player.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -1059,6 +1063,11 @@ moc_gamewidget.cpp: ../../gamewidget.h \
 		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qguiapplication_platform.h \
 		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/QKeyEvent \
 		../../player.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/QPainter \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qpainter.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qtextoption.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qpen.h \
+		../../enemy.h \
 		moc_predefs.h \
 		/home/mk/Qt/6.11.0/gcc_64/libexec/moc
 	/home/mk/Qt/6.11.0/gcc_64/libexec/moc $(DEFINES) --include '/home/mk/School/NCKU/ProgramDesign/Project 2-Kirby/Kirby/build/Desktop_Qt_6_11_0-Debug/moc_predefs.h' -I/home/mk/Qt/6.11.0/gcc_64/mkspecs/linux-g++ -I'/home/mk/School/NCKU/ProgramDesign/Project 2-Kirby/Kirby' -I/home/mk/Qt/6.11.0/gcc_64/include -I/home/mk/Qt/6.11.0/gcc_64/include/QtWidgets -I/home/mk/Qt/6.11.0/gcc_64/include/QtGui -I/home/mk/Qt/6.11.0/gcc_64/include/QtCore -I. -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../gamewidget.h -o moc_gamewidget.cpp
@@ -1285,6 +1294,9 @@ compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean
 
 ####### Compile
 
+enemy.o: ../../enemy.cpp ../../enemy.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o enemy.o ../../enemy.cpp
+
 gamewidget.o: ../../gamewidget.cpp ../../gamewidget.h \
 		/home/mk/Qt/6.11.0/gcc_64/include/QtWidgets/QWidget \
 		/home/mk/Qt/6.11.0/gcc_64/include/QtWidgets/qwidget.h \
@@ -1491,6 +1503,7 @@ gamewidget.o: ../../gamewidget.cpp ../../gamewidget.h \
 		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qpainter.h \
 		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qtextoption.h \
 		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qpen.h \
+		../../enemy.h \
 		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/QColor \
 		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/QTimer \
 		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qtimer.h
@@ -1907,10 +1920,154 @@ mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		../../gamewidget.h \
 		/home/mk/Qt/6.11.0/gcc_64/include/QtWidgets/QWidget \
 		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/QKeyEvent \
-		../../player.h
+		../../player.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/QPainter \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qpainter.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qtextoption.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qpen.h \
+		../../enemy.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../../mainwindow.cpp
 
-player.o: ../../player.cpp ../../player.h
+player.o: ../../player.cpp ../../player.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/QPainter \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qpainter.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qtguiglobal.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qglobal.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qtcoreglobal.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qtversionchecks.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qtconfiginclude.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qconfig.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qtcore-config.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qtconfigmacros.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qtdeprecationdefinitions.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qcompilerdetection.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qprocessordetection.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qsystemdetection.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qtcoreexports.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qtdeprecationmarkers.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qtclasshelpermacros.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qtpreprocessorsupport.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qassert.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qtnoop.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qtypes.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qtversion.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qtypeinfo.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qcontainerfwd.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qsysinfo.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qlogging.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qflags.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qcompare_impl.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qatomic.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qbasicatomic.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qatomic_cxx11.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qgenericatomic.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qyieldcpu.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qconstructormacros.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qdarwinhelpers.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qexceptionhandling.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qforeach.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qttypetraits.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qfunctionpointer.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qglobalstatic.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qmalloc.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qminmax.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qnumeric.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/q20type_traits.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qoverload.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qswap.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qtenvironmentvariables.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qtresource.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qttranslation.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qversiontagging.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qtgui-config.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qtguiexports.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qnamespace.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qcompare.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qstdlibdetection.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qcomparehelpers.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qtmetamacros.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qrect.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qcheckedint_impl.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qhashfunctions.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qstring.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qchar.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qstringview.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qbytearray.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qrefcount.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qarraydata.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qpair.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qarraydatapointer.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qarraydataops.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qcontainertools_impl.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qxptype_traits.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/q23type_traits.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/q20functional.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/q20memory.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/q17memory.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qbytearrayalgorithms.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qbytearrayview.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qstringfwd.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qstringalgorithms.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qlatin1stringview.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qanystringview.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qutf8stringview.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qstringtokenizer.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qstringbuilder.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qstringconverter.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qstringconverter_base.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qmargins.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/q23utility.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/q20utility.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qsize.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qpoint.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qscopedpointer.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qpixmap.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qpaintdevice.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qwindowdefs.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qobjectdefs.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qfunctionaltools_impl.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qcolor.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qrgb.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qstringlist.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qlist.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qiterator.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qbytearraylist.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qalgorithms.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/q20bit.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qsimd.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qstringmatcher.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qrgba64.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qshareddata.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qimage.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qpixelformat.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qtransform.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qpolygon.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qregion.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qdatastream.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qiodevicebase.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qspan.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/q20iterator.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qline.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qtextoption.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qmetatype.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qfloat16.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qmath.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qtformat_impl.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qiterable.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qtaggedpointer.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qmetacontainer.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qcontainerinfo.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qscopeguard.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qpen.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qbrush.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qfontinfo.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qfont.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/qendian.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qfontvariableaxis.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/qfontmetrics.h \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtCore/QRect \
+		/home/mk/Qt/6.11.0/gcc_64/include/QtGui/QColor
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o player.o ../../player.cpp
 
 moc_gamewidget.o: moc_gamewidget.cpp 
