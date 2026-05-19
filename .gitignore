@@ -1,0 +1,35 @@
+# Build folders
+build/
+build-*/
+
+# Qt Creator user settings
+*.pro.user
+*.pro.user.*
+
+# Object / compiled files
+*.o
+*.obj
+*.so
+*.a
+*.dll
+*.exe
+
+# Qt generated files
+moc_*
+ui_*
+qrc_*
+
+# Debug / release folders
+debug/
+release/
+
+# CMake (if ever generated)
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# OS/editor junk
+.DS_Store
+*.swp
+*.swo
