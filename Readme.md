@@ -2,8 +2,6 @@
 
 ## Student Information
 
-- Student ID(s): E24148434,E24115083 
-- Name(s): 馬泰, 陸澤宇
 - Completion / Last Updated Time: **2026-06-01**
 
 ## Development and Execution Environment
