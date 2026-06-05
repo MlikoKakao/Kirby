@@ -1,0 +1,134 @@
+<RCC>
+    <qresource prefix="/">
+        <file>images/Kirby_normal/kirby_stop_R.png</file>
+        <file>images/Kirby_normal/kirby_attack_L.png</file>
+        <file>images/Kirby_normal/kirby_attack_R.png</file>
+        <file>images/Kirby_normal/kirby_attack_star(2).png</file>
+        <file>images/Kirby_normal/kirby_attack_star_L(1).png</file>
+        <file>images/Kirby_normal/kirby_attack_star_R(1).png</file>
+        <file>images/Kirby_normal/kirby_back.png</file>
+        <file>images/Kirby_normal/kirby_down_L.png</file>
+        <file>images/Kirby_normal/kirby_down_R.png</file>
+        <file>images/Kirby_normal/kirby_fly_1_L.png</file>
+        <file>images/Kirby_normal/kirby_fly_1_R.png</file>
+        <file>images/Kirby_normal/kirby_fly_2_L.png</file>
+        <file>images/Kirby_normal/kirby_fly_2_R.png</file>
+        <file>images/Kirby_normal/kirby_jump(2).png</file>
+        <file>images/Kirby_normal/kirby_jump(3).png</file>
+        <file>images/Kirby_normal/kirby_run_1_L.png</file>
+        <file>images/Kirby_normal/kirby_run_1_R.png</file>
+        <file>images/Kirby_normal/kirby_run_2_L.png</file>
+        <file>images/Kirby_normal/kirby_run_2_R.png</file>
+        <file>images/Kirby_normal/kirby_run_3_L.png</file>
+        <file>images/Kirby_normal/kirby_run_3_R.png</file>
+        <file>images/Kirby_normal/kirby_run_4_L.png</file>
+        <file>images/Kirby_normal/kirby_run_4_R.png</file>
+        <file>images/Kirby_normal/kirby_stop_L.png</file>
+        <file>images/background/game_over_continue.png</file>
+        <file>images/background/game_over_quit.png</file>
+        <file>images/background/Stage1(1).png</file>
+        <file>images/background/Stage1(2).png</file>
+        <file>images/background/Stage1(3).png</file>
+        <file>images/background/Stage2(1).png</file>
+        <file>images/background/Stage2(2).png</file>
+        <file>images/background/start.png</file>
+        <file>images/background/supplement(1).jpg</file>
+        <file>images/Gordo/Gordo(0).png</file>
+        <file>images/Gordo/Gordo(1).png</file>
+        <file>images/Hot Head/Hot_head_attack_L.png</file>
+        <file>images/Hot Head/Hot_head_attack_R.png</file>
+        <file>images/Hot Head/Hot_head_fire(1).png</file>
+        <file>images/Hot Head/Hot_head_fire(2)_L.png</file>
+        <file>images/Hot Head/Hot_head_fire(2)_R.png</file>
+        <file>images/Hot Head/Hot_head_fire(3)_L.png</file>
+        <file>images/Hot Head/Hot_head_fire(3)_R.png</file>
+        <file>images/Hot Head/Hot_head_run_L.png</file>
+        <file>images/Hot Head/Hot_head_run_R.png</file>
+        <file>images/Hot Head/Hot_head_stop_L.png</file>
+        <file>images/Hot Head/Hot_head_stop_R.png</file>
+        <file>images/item/1UP.png</file>
+        <file>images/item/brick.png</file>
+        <file>images/item/door.png</file>
+        <file>images/item/floor.png</file>
+        <file>images/item/goal_door.png</file>
+        <file>images/item/HP_0.png</file>
+        <file>images/item/HP_1.png</file>
+        <file>images/item/life.png</file>
+        <file>images/item/Maxim Tomato.png</file>
+        <file>images/Kirby_fire/kirbyfire_attack_L.png</file>
+        <file>images/Kirby_fire/kirbyfire_attack_R.png</file>
+        <file>images/Kirby_fire/kirbyfire_board.png</file>
+        <file>images/Kirby_fire/kirbyfire_down_L.png</file>
+        <file>images/Kirby_fire/kirbyfire_down_R.png</file>
+        <file>images/Kirby_fire/kirbyfire_fire(1)_L.png</file>
+        <file>images/Kirby_fire/kirbyfire_fire(1)_R.png</file>
+        <file>images/Kirby_fire/kirbyfire_fire(2)_L.png</file>
+        <file>images/Kirby_fire/kirbyfire_fire(2)_R.png</file>
+        <file>images/Kirby_fire/kirbyfire_fire(3)_L.png</file>
+        <file>images/Kirby_fire/kirbyfire_fire(3)_R.png</file>
+        <file>images/Kirby_fire/kirbyfire_fly(1)_L.png</file>
+        <file>images/Kirby_fire/kirbyfire_fly(1)_R.png</file>
+        <file>images/Kirby_fire/kirbyfire_fly(2)_L.png</file>
+        <file>images/Kirby_fire/kirbyfire_fly(2)_R.png</file>
+        <file>images/Kirby_fire/kirbyfire_run(1)_L.png</file>
+        <file>images/Kirby_fire/kirbyfire_run(1)_R.png</file>
+        <file>images/Kirby_fire/kirbyfire_run(2)_L.png</file>
+        <file>images/Kirby_fire/kirbyfire_run(2)_R.png</file>
+        <file>images/Kirby_fire/kirbyfire_run(3)_L.png</file>
+        <file>images/Kirby_fire/kirbyfire_run(3)_R.png</file>
+        <file>images/Kirby_fire/kirbyfire_stop_L.png</file>
+        <file>images/Kirby_fire/kirbyfire_stop_R.png</file>
+        <file>images/Kirby_spark/Kirby_spark_attack(1).png</file>
+        <file>images/Kirby_spark/Kirby_spark_attack(2).png</file>
+        <file>images/Kirby_spark/Kirby_spark_attack(3).png</file>
+        <file>images/Kirby_spark/Kirby_spark_board.png</file>
+        <file>images/Kirby_spark/Kirby_spark_down_L.png</file>
+        <file>images/Kirby_spark/Kirby_spark_down_R.png</file>
+        <file>images/Kirby_spark/Kirby_spark_fly(1)_L.png</file>
+        <file>images/Kirby_spark/Kirby_spark_fly(1)_R.png</file>
+        <file>images/Kirby_spark/Kirby_spark_fly(2)_L.png</file>
+        <file>images/Kirby_spark/Kirby_spark_fly(2)_R.png</file>
+        <file>images/Kirby_spark/Kirby_spark_run(1)_L.png</file>
+        <file>images/Kirby_spark/Kirby_spark_run(1)_R.png</file>
+        <file>images/Kirby_spark/Kirby_spark_run(2)_L.png</file>
+        <file>images/Kirby_spark/Kirby_spark_run(2)_R.png</file>
+        <file>images/Kirby_spark/Kirby_spark_stop_L.png</file>
+        <file>images/Kirby_spark/Kirby_spark_stop_R.png</file>
+        <file>images/Sparky/Sparky_attack_1.png</file>
+        <file>images/Sparky/Sparky_attack_2.png</file>
+        <file>images/Sparky/Sparky_left_1.png</file>
+        <file>images/Sparky/Sparky_left_2.png</file>
+        <file>images/Sparky/Sparky_ritht_1.png</file>
+        <file>images/Sparky/Sparky_ritht_2.png</file>
+        <file>images/Kirby_normal/kirby_jump(1)_L.png</file>
+        <file>images/Kirby_normal/kirby_jump(1)_R.png</file>
+        <file>images/Kirby_normal/kirby_jump(2)_L.png</file>
+        <file>images/Kirby_normal/kirby_jump(3)_L.png</file>
+        <file>images/Waddle Dee/Waddle_Dee0_l.png</file>
+        <file>images/Waddle Dee/Waddle_Dee0_r.png</file>
+        <file>images/Waddle Dee/Waddle_Dee1_l.png</file>
+        <file>images/Waddle Dee/Waddle_Dee1_r.png</file>
+        <file>images/Waddle Dee/Waddle_Dee2_l.png</file>
+        <file>images/Waddle Dee/Waddle_Dee2_r.png</file>
+        <file>images/Waddle Dee/Waddle_Dee_stop_l.png</file>
+        <file>images/Waddle Dee/Waddle_Dee_stop_r.png</file>
+        <file>images/background/clear_screen.png</file>
+        <file>images/Kirby_normal/inhale_1.png</file>
+        <file>images/Kirby_normal/inhale_2.png</file>
+        <file>images/Kirby_normal/inhale_3.png</file>
+        <file>images/Kirby_normal/inhale_4.png</file>
+        <file>images/Kirby_normal/inhale_5.png</file>
+        <file>images/Kirby_normal/inhale_6.png</file>
+        <file>images/background/menu_screen.png</file>
+        <file>images/background/menu_screen_spark.png</file>
+        <file>images/background/menu_screen_select_fire_nofire.png</file>
+        <file>images/background/menu_screen_select_fire_nofire_nospark.png</file>
+        <file>images/background/menu_screen_select_fire_no_spark.png</file>
+        <file>images/background/menu_screen_spark_no_fire.png</file>
+        <file>images/background/menu_screen_spark_no_fire_no_spark.png</file>
+        <file>images/background/menu_screen_spark_no_spark.png</file>
+        <file>images/background/hud_score.png</file>
+        <file>images/background/background_1_scale.png</file>
+        <file>images/background/background_2_scale.png</file>
+    </qresource>
+</RCC>

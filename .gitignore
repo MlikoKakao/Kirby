@@ -1,35 +1,69 @@
-# Build folders
-build/
-build-*/
+# Prerequisites
+*.d
 
-# Qt Creator user settings
-*.pro.user
-*.pro.user.*
-
-# Object / compiled files
+# Compiled Object files
+*.slo
+*.lo
 *.o
 *.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Linker files
+*.ilk
+
+# Debugger Files
+*.pdb
+
+# Compiled Dynamic libraries
 *.so
-*.a
+*.dylib
 *.dll
+*.so.*
+
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
 *.exe
+*.out
+*.app
 
-# Qt generated files
-moc_*
-ui_*
-qrc_*
+# Build directories
+build/
+Build/
+build-*/
 
-# Debug / release folders
-debug/
-release/
-
-# CMake (if ever generated)
+# CMake generated files
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
 Makefile
+install_manifest.txt
+compile_commands.json
 
-# OS/editor junk
-.DS_Store
+# Temporary files
+*.tmp
+*.log
+*.bak
 *.swp
-*.swo
+
+# vcpkg
+vcpkg_installed/
+
+# debug information files
+*.dwo
+
+# test output & cache
+Testing/
+.cache/
