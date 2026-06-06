@@ -1,8 +1,8 @@
-# Kirby's Adventure - Project 2
+## Download
 
-## Student Information
+The latest Windows build is available in the [Releases](../../releases) section.
 
-- Completion / Last Updated Time: **2026-06-01**
+Download the ZIP, extract it, and run the executable.
 
 ## Development and Execution Environment
 
