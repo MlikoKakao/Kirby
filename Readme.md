@@ -93,11 +93,6 @@ The game is inspired by classic Kirby platformers, but the implementation, struc
 5. Build the project.
 6. Run it from Qt Creator.
 
-## Contribution Note
-
-This was a team school project, but I implemented the overwhelming majority of the codebase and game systems myself.  
-My teammate contributed a small part of the final codebase.
-
 ## Status
 
 The game is playable and includes the main required mechanics, enemies, stages, UI screens, and bonus ability-storage functionality.
